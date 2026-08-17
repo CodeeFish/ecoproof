@@ -45,18 +45,18 @@ const DB = {
   "aqua danone indonesia": {
     name: 'AQUA (Danone Indonesia)',
     cat: 'Bottled water · Beverage',
-    summary: 'This product received a low-risk verdict because it has strong public evidence for certification, authenticity, emissions disclosure, and supporting documentation.',
+    summary: 'Produk ini menerima putusan berisiko rendah karena memiliki bukti publik yang kuat untuk sertifikasi, keaslian sertifikat, pengungkapan emisi, dan dokumentasi pendukung.',
     evidence: [
-      { key: 'certification', status: 'ok', description: 'Verified sustainability certifications are publicly available.' },
-      { key: 'certificateAuthenticity', status: 'ok', description: 'Certificate details can be verified through the issuing organization.' },
-      { key: 'labTesting', status: 'not-evaluated', description: 'No laboratory testing was assessed in this prototype.' },
-      { key: 'lca', status: 'not-evaluated', description: 'No lifecycle assessment data was assessed in this prototype.' },
-      { key: 'emissions', status: 'ok', description: 'Sustainability and emissions information is publicly reported.' },
-      { key: 'materialComposition', status: 'ok', description: 'Packaging materials are clearly disclosed.' },
-      { key: 'endOfLife', status: 'ok', description: 'Recycling and bottle collection information is provided.' },
-      { key: 'audit', status: 'ok', description: 'Sustainability reporting includes independent assurance.' },
-      { key: 'marketing', status: 'ok', description: 'Environmental claims are specific and supported by evidence.' },
-      { key: 'docs', status: 'ok', description: 'Sustainability reports and supporting documentation are available.' }
+      { key: 'certification', status: 'ok', description: 'ISO 14001:2015 and Type II Ecolabel on certain products.' },
+      { key: 'certificateAuthenticity', status: 'ok', description: "AQUA's Ecolabel registration is recorded in the government database." },
+      { key: 'labTesting', status: 'missing', description: 'LVE verification is available, but the full test report is not published.' },
+      { key: 'lca', status: 'missing', description: 'No published LCA for AQUA products has been found.' },
+      { key: 'emissions', status: 'ok', description: 'Danone-AQUA discloses Scope 1, 2, and 3 emissions.' },
+      { key: 'materialComposition', status: 'ok', description: 'Some bottles use up to 25% rPET; certain products are 100% recycled.' },
+      { key: 'endOfLife', status: 'ok', description: 'AQUA bottles are recyclable and supported by a circular economy program.' },
+      { key: 'audit', status: 'missing', description: 'The 2024 sustainability report has not yet received independent external assurance.' },
+      { key: 'marketing', status: 'ok', description: 'Claims of "100% recycled" and "recyclable" are backed by traceable evidence.' },
+      { key: 'docs', status: 'ok', description: 'Sustainability report, Ecolabel data, and material information are available.' }
     ]
   },
   "sensatia botanicals": {
@@ -249,7 +249,19 @@ const PRODUCT_TRANSLATIONS = {
     "aqua danone indonesia": {
       name: 'AQUA (Danone Indonesia)',
       cat: 'Air minum dalam kemasan · Minuman',
-      summary: 'Produk ini menerima putusan berisiko rendah karena memiliki bukti publik yang kuat untuk sertifikasi, keaslian sertifikat, pengungkapan emisi, dan dokumentasi pendukung.'
+      summary: 'Produk ini menerima putusan berisiko rendah karena memiliki bukti publik yang kuat untuk sertifikasi, keaslian sertifikat, pengungkapan emisi, dan dokumentasi pendukung.',
+      evidence: {
+        certification: 'ISO 14001:2015 dan Ekolabel Tipe II pada produk tertentu.',
+        certificateAuthenticity: 'Registrasi Ekolabel AQUA tercatat dalam basis data pemerintah.',
+        labTesting: 'Verifikasi LVE tersedia, tetapi laporan uji lengkap tidak dipublikasikan.',
+        lca: 'Belum ditemukan LCA produk AQUA yang dipublikasikan.',
+        emissions: 'Danone-AQUA mengungkapkan emisi Scope 1, 2, dan 3.',
+        materialComposition: 'Beberapa botol menggunakan hingga 25% rPET; produk tertentu 100% daur ulang.',
+        endOfLife: 'Botol AQUA dapat didaur ulang dan didukung program ekonomi sirkular.',
+        audit: 'Laporan keberlanjutan 2024 belum mendapat external assurance independen.',
+        marketing: 'Klaim "100% recycled" dan "recyclable" memiliki bukti yang dapat ditelusuri.',
+        docs: 'Tersedia laporan keberlanjutan, data Ekolabel, dan informasi material.'
+      }
     },
     "sensatia botanicals": {
       name: 'Sensatia Botanicals',
@@ -630,11 +642,30 @@ function getClosestProduct(query){
   return bestScore <= 0.35 ? { product: best, score: bestScore } : null;
 }
 
+// demo purpose to override default translation (eg for aqua)
+function getProductEvidenceOverride(product, key){
+  const productKey = Object.keys(DB).find(k => DB[k] === product) || normalizeKey(product && product.name ? product.name : '');
+  const translation = PRODUCT_TRANSLATIONS[currentLanguage] && PRODUCT_TRANSLATIONS[currentLanguage][productKey];
+  return (translation && translation.evidence && translation.evidence[key]) || '';
+}
+
 function buildEvidenceRows(product){
   const evidence = Array.isArray(product.evidence) ? product.evidence : [];
+  const productKey = Object.keys(DB).find(key => DB[key] === product);
+  const isAqua = productKey === 'aqua danone indonesia';
+
   return evidence.map(item => {
     const label = getEvidenceTranslation(item.key, 'label') || EVIDENCE_TEMPLATES[item.key]?.label || item.label || item.key || 'Evidence';
-    const description = getEvidenceTranslation(item.key, 'description') || item.description || EVIDENCE_TEMPLATES[item.key]?.description || '';
+
+    let description;
+    if (isAqua) {
+      // AQUA is the demo product with a hand-written, language-specific description.
+      description = getProductEvidenceOverride(product, item.key) || item.description || getEvidenceTranslation(item.key, 'description') || EVIDENCE_TEMPLATES[item.key]?.description || '';
+    } else {
+      // Every other product always shows the generic template text, in whichever language is active.
+      description = getEvidenceTranslation(item.key, 'description') || EVIDENCE_TEMPLATES[item.key]?.description || '';
+    }
+
     return [item.status || 'missing', label, description];
   });
 }
@@ -700,11 +731,36 @@ function render(p, note){
   el.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
+function findTokenMatch(normalized){
+  if(!normalized) return null;
+  const queryTokens = normalized.split(/\s+/).filter(Boolean);
+
+  let bestEntry = null;
+  let bestOverlap = 0;
+
+  Object.entries(DB).forEach(([key, product]) => {
+    const nameTokens = normalizeKey(product.name).split(/\s+/).filter(Boolean);
+    const keyTokens = key.split(/\s+/).filter(Boolean);
+    const productTokens = new Set([...nameTokens, ...keyTokens]);
+
+    const overlap = queryTokens.filter(t => productTokens.has(t)).length;
+    if(overlap > bestOverlap){
+      bestOverlap = overlap;
+      bestEntry = product;
+    }
+  });
+
+  return bestOverlap > 0 ? bestEntry : null;
+}
+
 async function runSearch(){
   const q = document.getElementById('searchInput').value.trim();
   const normalized = normalizeKey(q);
   const exactMatch = normalized && DB[normalized];
-  const substringMatch = exactMatch || Object.values(DB).find(p => normalizeKey(p.name).includes(normalized));
+  const substringMatch = exactMatch
+    || Object.values(DB).find(p => normalizeKey(p.name).includes(normalized))
+    || Object.values(DB).find(p => normalized.includes(normalizeKey(p.name)))
+    || findTokenMatch(normalized);
 
   if(substringMatch){
     await render(substringMatch);
