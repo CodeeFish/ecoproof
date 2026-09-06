@@ -204,6 +204,7 @@
   @media(max-width:840px){
     .video-section{max-width:480px;}
     .video-shell{grid-template-columns:1fr; gap:20px;}
+    .video-frame{max-width:360px; margin:0 auto;}
   }
   .note-banner{
     max-width:900px; margin:0 auto 20px; padding:16px 18px; border-radius:12px;
