@@ -126,7 +126,7 @@
 
   /* ===== Results ===== */
   #results{display:none; max-width:900px; margin:0 auto; padding:0 24px 100px;}
-  .video-section{max-width:1120px; margin:0 auto 60px; padding:0 24px;}
+  .video-section{width:calc(100vw - 48px); max-width:none; margin:0 auto 60px; padding:0;}
   .video-shell{display:block;}
   .video-frame{width:100%; aspect-ratio:16/9; overflow:hidden; border-radius:18px; border:1px solid var(--line); box-shadow:4px 4px 0 rgba(0,0,0,0.03);}
   .video-frame iframe{width:100%; height:100%; display:block; border:0;}
@@ -202,7 +202,7 @@
   }
   .chat-widget-body p{margin:0;}
 
-  @media(max-width:840px){.video-section{padding:0 16px;}}
+  @media(max-width:840px){.video-section{width:calc(100vw - 32px);}}
   .note-banner{
     max-width:900px; margin:0 auto 20px; padding:16px 18px; border-radius:12px;
     background:var(--green-soft); border:1px solid var(--green); color:var(--green);
