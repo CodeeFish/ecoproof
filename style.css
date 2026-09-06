@@ -202,7 +202,7 @@
   .chat-widget-body p{margin:0;}
 
   @media(max-width:840px){
-    .video-section{max-width:640px;}
+    .video-section{max-width:480px;}
     .video-shell{grid-template-columns:1fr; gap:20px;}
   }
   .note-banner{
