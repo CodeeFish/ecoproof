@@ -201,7 +201,10 @@
   }
   .chat-widget-body p{margin:0;}
 
-  @media(max-width:840px){.video-shell{grid-template-columns:1fr;}}
+  @media(max-width:840px){
+    .video-section{max-width:640px;}
+    .video-shell{grid-template-columns:1fr; gap:20px;}
+  }
   .note-banner{
     max-width:900px; margin:0 auto 20px; padding:16px 18px; border-radius:12px;
     background:var(--green-soft); border:1px solid var(--green); color:var(--green);
