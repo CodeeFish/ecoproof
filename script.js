@@ -1196,6 +1196,7 @@ function clearImagePreview(){
 }
 
 function initChatWidget(){
+  if (document.querySelector('.home-main, .secondary-page')) return;
   const chatContainer = document.createElement('div');
   chatContainer.className = 'chat-widget-container';
   chatContainer.innerHTML = `
