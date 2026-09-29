@@ -10,75 +10,100 @@
 </head>
 <body>
 
-<header>
-  <a class="logo" href="index.html"><span class="mark">✓</span>EcoProof</a>
-  <nav>
-    <a href="index.html" data-i18n="nav.search">Search</a>
+<header class="site-header">
+  <a class="logo" href="index.html" aria-label="EcoProof home"><img src="ecoproof-logo.svg" alt="EcoProof" /></a>
+  <nav id="primaryNav">
+    <a href="index.html" class="active" data-i18n="nav.search">Search</a>
     <a href="learn.html" data-i18n="nav.learn">Learn Before You Believe</a>
     <a href="evidence.html" data-i18n="nav.evidence">Evidence Network</a>
+  </nav>
+  <div class="header-actions">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation" onclick="toggleNav()"><span class="menu-glyph" aria-hidden="true">☰</span></button>
     <button class="lang-switch" type="button" onclick="toggleLanguage()" aria-label="Switch language">
       <span data-i18n="lang.toggle">EN / ID</span>
     </button>
-  </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <span class="eyebrow" data-i18n="hero.badge">SDG 12 &amp; SDG 13 · Student Prototype</span>
-  <h1 data-i18n="hero.title">Don't trust the label.<br><em>Trace the evidence.</em></h1>
-  <p class="sub" data-i18n="hero.subtitle">Search any product to see the certifications, lab tests, and disclosures behind its environmental claims — not just the marketing copy on the box.</p>
+<main class="home-main">
+  <section class="hero home-hero">
+    <div class="hero-copy">
+      <span class="eyebrow" data-i18n="hero.badge">SDG 12 &amp; SDG 13 · Student Prototype</span>
+      <h1 data-i18n="hero.title">Don't trust the label.<br><em>Trace the evidence.</em></h1>
+      <p class="sub" data-i18n="hero.subtitle">Search any product to see the certifications, lab tests, and disclosures behind its environmental claims — not just the marketing copy on the box.</p>
 
-  <div class="search-box">
-    <input id="searchInput" type="text" data-i18n-placeholder="search.placeholder" placeholder="Search a product name…" />
-    <button onclick="runSearch()" data-i18n="search.button">Verify</button>
-  </div>
-  <div class="search-modes">
-    <span class="mode-chip active" data-i18n="search.mode.name">Name Search</span>
-    <span class="mode-chip" data-i18n="search.mode.image">Upload Image</span>
-  </div>
+      <div class="search-box">
+        <span class="search-symbol" aria-hidden="true">⌕</span>
+        <input id="searchInput" type="text" data-i18n-placeholder="search.placeholder" placeholder="Search a product name…" />
+        <button onclick="runSearch()" data-i18n="search.button">Verify</button>
+      </div>
+      <div class="search-modes">
+        <button class="mode-chip active" id="nameSearchMode" type="button" aria-pressed="true" onclick="setSearchMode('name')" data-i18n="search.mode.name">Name Search</button>
+        <button class="mode-chip" id="imageSearchMode" type="button" aria-pressed="false" onclick="setSearchMode('image')" data-i18n="search.mode.image">Upload Image</button>
+        <input id="productImageInput" type="file" accept="image/*" hidden />
+      </div>
+      <div class="image-upload-preview" id="imageUploadPreview" hidden aria-live="polite">
+        <img id="uploadedProductImage" alt="Selected product" />
+        <div><strong data-i18n="image.preview.title">Image selected</strong><p data-i18n="image.preview.note">Automatic image recognition is not available in this demo yet. Enter the product name above to check its evidence.</p></div>
+        <button type="button" id="clearImagePreview" aria-label="Remove selected image" data-i18n-aria-label="image.preview.remove" onclick="clearImagePreview()">×</button>
+      </div>
 
-  <div class="try-row">
-    <span data-i18n="search.demo.label">Try a demo product:</span>
-    <span class="try-chip" onclick="demo('Verdanta Compostable Cups')">Verdanta Compostable Cups</span>
-    <span class="try-chip" onclick="demo('PureLeaf Bamboo Tissue')">PureLeaf Bamboo Tissue</span>
-    <span class="try-chip" onclick="demo('NovaWear EcoKnit Tee')">NovaWear EcoKnit Tee</span>
-  </div>
-</section>
-
-<section class="video-section">
-  <div class="video-shell">
-    <div class="video-frame">
-      <iframe
-        src="https://www.youtube.com/embed/4T4nAqRPGL4"
-        title="EcoProof video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+      <div class="try-row">
+        <span class="try-label" data-i18n="search.demo.label">Try an Indonesian brand:</span>
+        <div class="try-chips">
+          <span class="try-chip" onclick="demo('AQUA')"><span aria-hidden="true">◉</span> AQUA</span>
+          <span class="try-chip" onclick="demo('CLEO')"><span aria-hidden="true">◈</span> CLEO</span>
+          <span class="try-chip" onclick="demo('CLUB')"><span aria-hidden="true">◉</span> CLUB</span>
+        </div>
+      </div>
     </div>
-    <div class="video-copy">
-      <div class="panel-title" data-i18n="video.title">Watch EcoProof in action</div>
-      <p class="sub" data-i18n="video.subtitle">A quick demo of how to search, verify product claims, and inspect the evidence behind sustainability marketing.</p>
+    <div class="hero-art" aria-hidden="true">
+      <img src="hero-globe.svg" alt="" />
+      <span class="art-orbit orbit-one"></span>
+      <span class="art-orbit orbit-two"></span>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="results"></section>
+  <section class="trust-strip" aria-label="EcoProof principles">
+    <article class="trust-item">
+      <span class="trust-icon shield-icon" aria-hidden="true">✓</span>
+      <div><h2 data-i18n="trust.card1.title">Evidence you can trust</h2><p data-i18n="trust.card1.text">Real certifications, lab tests, and disclosures.</p></div>
+    </article>
+    <article class="trust-item">
+      <span class="trust-icon search-icon" aria-hidden="true">⌕</span>
+      <div><h2 data-i18n="trust.card2.title">Transparent &amp; independent</h2><p data-i18n="trust.card2.text">We connect you to credible third-party data.</p></div>
+    </article>
+    <article class="trust-item">
+      <span class="trust-icon leaf-icon" aria-hidden="true">↗</span>
+      <div><h2 data-i18n="trust.card3.title">Better choices</h2><p data-i18n="trust.card3.text">Make informed decisions for a greener future.</p></div>
+    </article>
+    <article class="trust-item">
+      <span class="trust-icon people-icon" aria-hidden="true">●●</span>
+      <div><h2 data-i18n="trust.card4.title">Evidence network</h2><p data-i18n="trust.card4.text">Built by experts. Backed by science.</p></div>
+    </article>
+  </section>
 
-<section id="how-to-use" class="learn-strip">
-  <div class="panel-title" data-i18n="how.title">How to use EcoProof</div>
-  <div class="panel-sub" data-i18n="how.subtitle">Start with a product name, review the evidence score, and use the result to tell the difference between marketing claims and real verification.</div>
-  <div class="case-grid">
-    <div class="case-card">
-      <span class="ctag" style="color:var(--green)" data-i18n="how.card1.tag">Search</span>
-      <h4 data-i18n="how.card1.title">Enter a product name</h4>
-      <p data-i18n="how.card1.text">Type or paste the product and click Verify. The search is typo-tolerant and works with the demo product names.</p>
+  <section id="results"></section>
+
+  <section id="how-to-use" class="learn-preview">
+    <div class="learn-preview-heading">
+    <span class="section-kicker" data-i18n="learn.preview.kicker">Learn before you believe</span>
+    <h2 data-i18n="learn.preview.title">Greenwashing can sound convincing.</h2>
+    <p data-i18n="learn.preview.subtitle">Strong evidence is quieter, more specific, and easier to verify.</p>
     </div>
-    <div class="case-card">
-      <span class="ctag" style="color:var(--green)" data-i18n="how.card2.tag">Review</span>
-      <h4 data-i18n="how.card2.title">Inspect the evidence</h4>
-      <p data-i18n="how.card2.text">Compare certifications, lab results, and disclosures to see whether the claim is backed by clear, verifiable proof.</p>
+    <div class="learn-preview-grid">
+    <article class="learn-preview-card supported-card">
+      <span class="preview-illustration document-check" aria-hidden="true"><span>✓</span></span>
+      <div><span class="preview-tag" data-i18n="learn.preview.good.tag">Well supported</span><h3 data-i18n="learn.preview.good.title">Claims backed by proof</h3><p data-i18n="learn.preview.good.text">Look for clear, verifiable evidence and transparent data.</p></div>
+    </article>
+    <article class="learn-preview-card unsupported-card">
+      <span class="preview-illustration document-alert" aria-hidden="true"><span>!</span></span>
+      <div><span class="preview-tag" data-i18n="learn.preview.bad.tag">Unsupported claim</span><h3 data-i18n="learn.preview.bad.title">Promises without proof</h3><p data-i18n="learn.preview.bad.text">Watch for vague language, missing sources, or unclear scope.</p></div>
+    </article>
     </div>
-  </div>
-  <p class="learn-link-row"><a href="evidence.html" data-i18n="how.link">See the Evidence Network →</a></p>
-</section>
+    <a class="learn-more-link" href="learn.html" data-i18n="learn.preview.link">Explore the guide <span aria-hidden="true">→</span></a>
+  </section>
+</main>
 
 <footer data-i18n="footer.text">ECOPROOF PROTOTYPE — DUMMY DATA FOR DEMONSTRATION ONLY</footer>
 

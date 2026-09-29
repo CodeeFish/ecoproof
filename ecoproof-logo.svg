@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 100" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">EcoProof — environmental evidence</title>
+  <defs>
+    <clipPath id="globe-clip"><circle cx="47" cy="48" r="24"/></clipPath>
+  </defs>
+
+  <!-- Segmented circular seal -->
+  <g fill="none" stroke-linecap="round">
+    <circle cx="47" cy="48" r="40" stroke="#2f7a4d" stroke-width="2.4" stroke-dasharray="22 8 11 7 17 9 8 8"/>
+    <circle cx="47" cy="51" r="34" stroke="#193b65" stroke-width="2.3"/>
+  </g>
+
+  <!-- Earth and simplified continents -->
+  <circle cx="47" cy="58" r="24" fill="#193b65"/>
+  <g clip-path="url(#globe-clip)" fill="#fff">
+    <path d="m22 45 7-6 8 1 4 5-3 4-7 1-2 6-5-2-3-5-5-1zm18 7 7-4 7 2 5 8-5 6-2 9-6 3-5-6 1-7-5-5zm17-9 7-3 8 3 3 5-4 3-6-1-3 4-5-4zM62 59l6-3 5 4 1 6-5 5-5-3-4-5z"/>
+  </g>
+
+  <!-- Person and new growth -->
+  <g fill="#2f7a4d">
+    <circle cx="47" cy="12" r="6"/>
+    <path d="M44 19h6l3 17H41z"/>
+    <path d="M44 24c-7-8-13-6-16-3 4 7 10 9 16 6zm6 0c7-8 13-6 16-3-4 7-10 9-16 6z"/>
+  </g>
+
+  <!-- Leaves cradle the globe -->
+  <g fill="#2f7a4d">
+    <path d="M9 54c2 13 12 23 29 29-9-10-14-21-17-35-6 0-10 2-12 6z"/>
+    <path d="M85 54C83 67 73 77 56 83c9-10 14-21 17-35 6 0 10 2 12 6z"/>
+  </g>
+  <g fill="none" stroke="#dcebd9" stroke-width="1.2" opacity=".9">
+    <path d="m13 58 19 18m-14-24 22 26m41-20L62 76m14-24L54 78"/>
+  </g>
+
+  <!-- Approval mark -->
+  <path d="m67 25 8 9 18-23" fill="none" stroke="#2f7a4d" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Wordmark -->
+  <text x="112" y="63" font-family="Trebuchet MS,Arial,sans-serif" font-size="48" font-style="italic" font-weight="700" letter-spacing="-2.2">
+    <tspan fill="#2f7a4d">Eco</tspan><tspan fill="#193b65">Proof</tspan>
+  </text>
+</svg>

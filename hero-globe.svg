@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 560" fill="none">
+  <defs>
+    <radialGradient id="ocean" cx="0" cy="0" r="1" gradientTransform="matrix(280 230 -230 280 220 160)" gradientUnits="userSpaceOnUse"><stop stop-color="#B9E6F3"/><stop offset="1" stop-color="#3E85B1"/></radialGradient>
+    <linearGradient id="land" x1="156" x2="433" y1="116" y2="437" gradientUnits="userSpaceOnUse"><stop stop-color="#B9DFA7"/><stop offset="1" stop-color="#4D9A62"/></linearGradient>
+    <linearGradient id="leaf" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#8FCB71"/><stop offset="1" stop-color="#2F7A4D"/></linearGradient>
+    <filter id="shadow" width="1.35" height="1.4" x="-.16" y="-.16"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#245E43" flood-opacity=".16"/></filter>
+    <clipPath id="globe"><circle cx="310" cy="275" r="190"/></clipPath>
+  </defs>
+  <circle cx="310" cy="275" r="213" fill="#E9F5E8" opacity=".62"/>
+  <circle cx="310" cy="275" r="198" stroke="#A8D1AA" stroke-dasharray="3 14" stroke-linecap="round" stroke-width="2"/>
+  <circle cx="310" cy="275" r="190" fill="url(#ocean)" filter="url(#shadow)"/>
+  <g clip-path="url(#globe)" fill="url(#land)">
+    <path d="m151 143 24-25 37 4 18 17-6 21-29 9-9 24-22 2-7-22-23-8 17-22Zm86 19 22-17 29 8 9 20-12 13-4 28-15 20-20-12-9-21-26-10-9-16 15-13Zm-5 96 25-16 35 6 16 25-7 17 16 20-4 30-18 22-10 46-22 22-20-20-6-39-19-26 7-29-15-19 5-23 17-16Zm102-137 33-13 32 14 22 26-10 21-32 2-11 21-25-8-19-22 5-22-15-19Zm45 108 21-13 26 11 14 27-13 20-25-5-14 17-21-15 2-22-14-20 24 0Zm31 100 20-11 28 13 12 27-20 13-33-4-15-18 8-20Z"/>
+    <path d="M118 275c54-27 102-24 139 9-6 46-36 72-89 77-37-18-55-46-50-86Zm220 44c39-34 85-38 139-11 7 41-9 71-49 92-52-7-82-34-90-81Z" opacity=".72"/>
+  </g>
+  <path d="M155 176c41-68 117-105 196-94" stroke="#fff" stroke-opacity=".46" stroke-width="3"/>
+  <path d="M438 375c-45 67-120 103-197 91" stroke="#fff" stroke-opacity=".35" stroke-width="3"/>
+  <g filter="url(#shadow)" transform="rotate(7 423 226)">
+    <rect x="354" y="193" width="200" height="105" rx="18" fill="#fff"/>
+    <circle cx="386" cy="230" r="20" fill="#E4F0E6"/>
+    <path d="m377 230 7 7 13-16" stroke="#2F7A4D" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+    <text x="416" y="226" fill="#276344" font-family="Arial,sans-serif" font-size="15" font-weight="700">Transparency first</text>
+    <text x="416" y="249" fill="#59665C" font-family="Arial,sans-serif" font-size="12">Real data. Real impact.</text>
+    <rect x="417" y="267" width="8" height="14" rx="2" fill="#A8D9A0"/><rect x="430" y="259" width="8" height="22" rx="2" fill="#73B77A"/><rect x="443" y="250" width="8" height="31" rx="2" fill="#2F7A4D"/>
+  </g>
+  <path d="M45 337c47 4 71 25 76 64-42-2-68-23-76-64Z" fill="url(#leaf)"/>
+  <path d="M70 350c17 12 30 27 39 43" stroke="#E9F6DF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M520 94c-34 20-43 48-27 83 32-20 41-48 27-83Z" fill="url(#leaf)"/>
+  <path d="M516 111c-8 20-12 39-13 57" stroke="#E9F6DF" stroke-width="2" stroke-linecap="round"/>
+  <path d="M89 167c27-21 54-19 80 5-28 20-54 19-80-5Z" fill="#70B45F" opacity=".8"/>
+  <path d="M104 168c17-1 32 1 47 7" stroke="#E9F6DF" stroke-width="2" stroke-linecap="round"/>
+</svg>

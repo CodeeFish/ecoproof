@@ -10,51 +10,48 @@
 </head>
 <body>
 
-<header>
-  <a class="logo" href="index.html"><span class="mark">✓</span>EcoProof</a>
-  <nav>
+<header class="site-header">
+  <a class="logo" href="index.html" aria-label="EcoProof home"><img src="ecoproof-logo.svg" alt="EcoProof" /></a>
+  <nav id="primaryNav">
     <a href="index.html" data-i18n="nav.search">Search</a>
     <a href="learn.html" data-i18n="nav.learn">Learn Before You Believe</a>
     <a href="evidence.html" class="active" data-i18n="nav.evidence">Evidence Network</a>
+  </nav>
+  <div class="header-actions">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation" onclick="toggleNav()"><span class="menu-glyph" aria-hidden="true">☰</span></button>
     <button class="lang-switch" type="button" onclick="toggleLanguage()" aria-label="Switch language">
       <span data-i18n="lang.toggle">EN / ID</span>
     </button>
-  </nav>
+  </div>
 </header>
 
-<main class="page-shell">
-  <section class="page-hero">
-    <span class="eyebrow" data-i18n="evidence.badge">Evidence Network · Coming Soon</span>
+<main class="page-shell secondary-page evidence-page">
+  <section class="page-hero evidence-hero">
+    <span class="eyebrow" data-i18n="evidence.badge">Evidence Network</span>
     <h1 data-i18n="evidence.title">Evidence Network</h1>
-    <p class="sub" data-i18n="evidence.subtitle">We’re building a simple, expandable network of evidence that connects product claims to certifications, lab reports, and third-party disclosure records.</p>
+    <p class="sub" data-i18n="evidence.subtitle">Trace a product claim back to its source, understand its scope, and see what the evidence does—and does not—prove.</p>
   </section>
 
-  <section class="learn-strip">
-    <div class="panel-title" data-i18n="evidence.panelTitle">Why this page matters</div>
-    <div class="panel-sub" data-i18n="evidence.panelSub">A true evidence network should let users trace a claim back to its source, not just trust the label. This placeholder is the first step toward that vision.</div>
+  <section class="network-flow">
+    <div class="network-flow-heading"><span class="section-kicker" data-i18n="evidence.flow.kicker">Follow the evidence</span><h2 data-i18n="evidence.panelTitle">A claim should lead to proof.</h2><p data-i18n="evidence.panelSub">Trace each environmental statement through its source, scope, and verification.</p></div>
+    <div class="flow-track">
+      <article class="flow-card"><span class="flow-step">01</span><span class="flow-icon claim-icon" aria-hidden="true">“ ”</span><h3 data-i18n="evidence.flow.claim.title">Product claim</h3><p data-i18n="evidence.flow.claim.text">What exactly is being promised—and which product or package does it refer to?</p></article>
+      <span class="flow-arrow" aria-hidden="true">→</span>
+      <article class="flow-card"><span class="flow-step">02</span><span class="flow-icon source-icon" aria-hidden="true">⌕</span><h3 data-i18n="evidence.flow.source.title">Public source</h3><p data-i18n="evidence.flow.source.text">Find the certificate, test report, company disclosure, or regulator record.</p></article>
+      <span class="flow-arrow" aria-hidden="true">→</span>
+      <article class="flow-card"><span class="flow-step">03</span><span class="flow-icon scope-icon" aria-hidden="true">✓</span><h3 data-i18n="evidence.flow.scope.title">Evidence &amp; scope</h3><p data-i18n="evidence.flow.scope.text">Check who verified it, what it covers, and when it remains valid.</p></article>
+    </div>
+  </section>
 
+  <section class="network-features">
+    <div class="network-features-heading"><span class="section-kicker" data-i18n="evidence.sources.kicker">Built for clarity</span><h2 data-i18n="evidence.sources.title">Evidence is more than a badge.</h2></div>
     <div class="feature-grid">
-      <div class="feature-card">
-        <h4 data-i18n="evidence.card1.title">Verified sources</h4>
-        <p data-i18n="evidence.card1.text">Certificates, lab tests, and registries will be grouped here so users can follow the proof behind each claim.</p>
-      </div>
-      <div class="feature-card">
-        <h4 data-i18n="evidence.card2.title">Product evidence links</h4>
-        <p data-i18n="evidence.card2.text">Future expansion will show how products connect to common standards and third-party verifications.</p>
-      </div>
-      <div class="feature-card">
-        <h4 data-i18n="evidence.card3.title">Search-ready structure</h4>
-        <p data-i18n="evidence.card3.text">The evidence network will be easy to grow by adding new products, indicators, and verified documents.</p>
-      </div>
-      <div class="feature-card">
-        <h4 data-i18n="evidence.card4.title">Designed for handoff</h4>
-        <p data-i18n="evidence.card4.text">This page is intentionally simple so the project can expand cleanly with new dataset categories or interactive visuals.</p>
-      </div>
+      <article class="feature-card"><span class="network-card-icon">✓</span><h4 data-i18n="evidence.card1.title">Verified sources</h4><p data-i18n="evidence.card1.text">Certificates, lab tests, and registries help trace the proof behind each claim.</p></article>
+      <article class="feature-card"><span class="network-card-icon">↗</span><h4 data-i18n="evidence.card2.title">Product evidence links</h4><p data-i18n="evidence.card2.text">Connect product claims to standards, reports, and third-party reviews.</p></article>
+      <article class="feature-card"><span class="network-card-icon">⌕</span><h4 data-i18n="evidence.card3.title">Search-ready structure</h4><p data-i18n="evidence.card3.text">Compare products and indicators through a consistent evidence framework.</p></article>
+      <article class="feature-card"><span class="network-card-icon">◎</span><h4 data-i18n="evidence.card4.title">Designed to grow</h4><p data-i18n="evidence.card4.text">Add new products, sources, and verification records as evidence becomes available.</p></article>
     </div>
-
-    <div class="callout-box" data-i18n="evidence.note">
-      <strong>Note:</strong> This is a placeholder page showing the future direction of the Evidence Network and might be expanded later with real data, charts, maps, or a searchable database.
-    </div>
+    <div class="callout-box network-note"><span class="note-mark" aria-hidden="true">i</span><p data-i18n="evidence.note">A certification or company-wide program only supports the claim and scope it actually covers; it does not automatically prove every product is environmentally superior.</p></div>
   </section>
 </main>
 

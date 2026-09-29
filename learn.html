@@ -10,27 +10,37 @@
 </head>
 <body>
 
-<header>
-  <a class="logo" href="index.html"><span class="mark">✓</span>EcoProof</a>
-  <nav>
+<header class="site-header">
+  <a class="logo" href="index.html" aria-label="EcoProof home"><img src="ecoproof-logo.svg" alt="EcoProof" /></a>
+  <nav id="primaryNav">
     <a href="index.html" data-i18n="nav.search">Search</a>
     <a href="learn.html" class="active" data-i18n="nav.learn">Learn Before You Believe</a>
     <a href="evidence.html" data-i18n="nav.evidence">Evidence Network</a>
+  </nav>
+  <div class="header-actions">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="primaryNav" aria-expanded="false" aria-label="Open navigation" onclick="toggleNav()"><span class="menu-glyph" aria-hidden="true">☰</span></button>
     <button class="lang-switch" type="button" onclick="toggleLanguage()" aria-label="Switch language">
       <span data-i18n="lang.toggle">EN / ID</span>
     </button>
-  </nav>
+  </div>
 </header>
 
-<main class="page-shell">
+<main class="page-shell secondary-page learn-page">
   <section class="page-hero">
     <span class="eyebrow" data-i18n="learn.badge">Education · Greenwashing Literacy</span>
     <h1 data-i18n="learn.title">Learn Before You Believe</h1>
     <p class="sub" data-i18n="learn.subtitle">Environmental claims can sound convincing without being verifiable. This page breaks down common tactics, what credible evidence looks like, and how to evaluate claims more carefully.</p>
   </section>
 
+  <section class="learning-banner">
+    <span class="learning-banner-icon" aria-hidden="true">✓</span>
+    <div><strong data-i18n="learn.banner.title">A good sustainability claim is specific, scoped, and verifiable.</strong><p data-i18n="learn.banner.text">Follow the claim to its source, then check what the evidence really covers.</p></div>
+    <span class="learning-flow" aria-hidden="true">01 <b>→</b> 02 <b>→</b> 03</span>
+  </section>
+
   <section class="learn-grid">
     <article class="learn-card">
+      <span class="lesson-number">01</span>
       <h3 data-i18n="learn.card1.title">What greenwashing looks like</h3>
       <ul>
         <li data-i18n="learn.card1.item1">Vague terms like “eco-friendly,” “natural,” or “planet-safe” without a measurable definition.</li>
@@ -40,6 +50,7 @@
     </article>
 
     <article class="learn-card">
+      <span class="lesson-number">02</span>
       <h3 data-i18n="learn.card2.title">What strong evidence looks like</h3>
       <ul>
         <li data-i18n="learn.card2.item1">Recognized certifications such as EN 13432, FSC, BPI, or similar third-party standards.</li>
@@ -49,6 +60,7 @@
     </article>
 
     <article class="learn-card wide">
+      <span class="lesson-number">03</span>
       <h3 data-i18n="learn.card3.title">How to question a claim</h3>
       <p data-i18n="learn.card3.text">Ask three things before trusting a sustainability claim: Can it be verified, who verified it, and is the evidence public?</p>
       <div class="check-list">
@@ -59,6 +71,7 @@
     </article>
 
     <article class="learn-card">
+      <span class="lesson-number">04</span>
       <h3 data-i18n="learn.card4.title">Common red flags</h3>
       <ul>
         <li data-i18n="learn.card4.item1">Claims that are broad, emotional, or visually persuasive without proof.</li>
@@ -68,10 +81,12 @@
     </article>
 
     <article class="learn-card">
+      <span class="lesson-number">05</span>
       <h3 data-i18n="learn.card5.title">Why EcoProof exists</h3>
       <p data-i18n="learn.card5.text">EcoProof helps users move from marketing language to measurable evidence. The goal is not to replace judgment, but to make evidence easier to find and compare.</p>
     </article>
   </section>
+  <a class="secondary-cta" href="evidence.html"><span data-i18n="learn.cta">Explore the Evidence Network</span><b aria-hidden="true">→</b></a>
 </main>
 
 <footer data-i18n="footer.text">ECOPROOF PROTOTYPE — DUMMY DATA FOR DEMONSTRATION ONLY</footer>
