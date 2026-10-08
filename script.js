@@ -46,22 +46,22 @@ const DB = {
     name: 'AQUA (Danone Indonesia)',
     cat: 'Bottled water · Beverage',
     sentimentOverrides: {
-      certification: 'positive', certificateAuthenticity: 'neutral', labTesting: 'negative', lca: 'neutral',
-      emissions: 'positive', materialComposition: 'positive', endOfLife: 'positive', audit: 'neutral',
+      certification: 'positive', certificateAuthenticity: 'neutral', labTesting: 'neutral', lca: 'positive',
+      emissions: 'neutral', materialComposition: 'positive', endOfLife: 'neutral', audit: 'neutral',
       marketing: 'neutral', docs: 'positive'
     },
     summary: 'Bukti perusahaan mendukung beberapa aspek operasi dan kemasan, tetapi tidak membuktikan bahwa seluruh produk AQUA Life memiliki dampak lingkungan lebih rendah. Bukti tingkat perusahaan atau program tidak otomatis berlaku untuk setiap produk atau klaim.',
     evidence: [
-      { key: 'certification', status: 'ok', description: 'AQUA memiliki sertifikasi dan standar pihak ketiga untuk sejumlah aspek operasi dan kemasan. Sertifikasi ini bukan bukti bahwa seluruh produk AQUA Life memiliki dampak lingkungan lebih rendah.', descriptionEn: 'AQUA holds third-party certifications and standards for some operational and packaging aspects. These do not prove that every AQUA Life product has a lower environmental impact.' },
-      { key: 'certificateAuthenticity', status: 'partial', description: 'Dokumen dan sertifikasi dapat ditelusuri melalui dokumentasi perusahaan dan/atau lembaga sertifikasi. Periksa validitas tiap sertifikat berdasarkan nomor, ruang lingkup, dan masa berlaku.', descriptionEn: 'Documents and certifications can be traced through company documentation and/or certification bodies. Check each certificate’s number, scope, and validity period.' },
-      { key: 'labTesting', status: 'missing', description: 'Tidak ditemukan laporan uji laboratorium publik yang secara langsung membuktikan seluruh klaim lingkungan AQUA Life, termasuk perbandingan botolnya dengan botol PET konvensional.', descriptionEn: 'No public laboratory report was found that directly substantiates all AQUA Life environmental claims, including a comparison with conventional PET bottles.' },
-      { key: 'lca', status: 'partial', description: 'Danone/AQUA menerbitkan informasi jejak lingkungan dan pendekatan siklus hidup dalam laporan keberlanjutan. Informasi ini tidak selalu berupa LCA independen yang spesifik untuk setiap SKU AQUA di Indonesia.', descriptionEn: 'Danone/AQUA publishes environmental footprint and life-cycle information in its sustainability reporting. This is not necessarily an independent LCA specific to every AQUA SKU sold in Indonesia.' },
-      { key: 'emissions', status: 'ok', description: 'Danone menerbitkan informasi emisi dan target pengurangan emisi dalam laporan keberlanjutan, termasuk Scope 1, 2, dan 3.', descriptionEn: 'Danone publishes emissions information and reduction targets in its sustainability reporting, including Scope 1, 2, and 3.' },
-      { key: 'materialComposition', status: 'ok', description: 'Penggunaan PET daur ulang (rPET) diungkapkan untuk produk tertentu, termasuk AQUA Life. Persentase harus dikaitkan dengan produk dan tahun yang tepat karena komposisi kemasan dapat berubah.', descriptionEn: 'Recycled PET (rPET) use is disclosed for certain products, including AQUA Life. Percentages should be tied to the specific product and year because packaging composition can change.' },
-      { key: 'endOfLife', status: 'ok', description: 'AQUA mengomunikasikan program pengumpulan dan daur ulang botol plastik melalui inisiatif ekonomi sirkular dan pengelolaan sampah plastik.', descriptionEn: 'AQUA communicates plastic bottle collection and recycling programs through circular-economy and plastic-waste-management initiatives.' },
-      { key: 'audit', status: 'partial', description: 'Sebagian informasi keberlanjutan perusahaan menjalani assurance atau verifikasi pihak ketiga. Ini tidak berarti setiap klaim pemasaran produk telah diaudit secara independen.', descriptionEn: 'Some corporate sustainability information undergoes third-party assurance or verification. This does not mean every product marketing claim has been independently audited.' },
-      { key: 'marketing', status: 'partial', description: 'Klaim seperti “100% recycled PET” atau ekonomi sirkular perlu diperiksa ruang lingkupnya: botol, bahan PET, seluruh kemasan, atau keseluruhan produk.', descriptionEn: 'Claims such as “100% recycled PET” or circular economy should be checked for scope: the bottle, PET material, all packaging, or the entire product.' },
-      { key: 'docs', status: 'ok', description: 'Bukti pendukung mencakup laporan keberlanjutan Danone, informasi kemasan dan ekonomi sirkular, serta dokumentasi program pengumpulan dan daur ulang plastik.', descriptionEn: 'Supporting evidence includes Danone sustainability reports, packaging and circular-economy information, and documentation of plastic collection and recycling programs.' }
+      { key: 'certification', status: 'ok', description: 'Profil B Corp Danone-AQUA mendukung adanya sertifikasi B Corp pada tingkat perusahaan. Sertifikasi perusahaan ini tidak dengan sendirinya membuktikan bahwa setiap produk AQUA Life memiliki dampak lingkungan lebih rendah.', descriptionEn: 'The Danone-AQUA B Corp profile supports B Corp certification at the company level. This company certification does not by itself establish that every AQUA Life product has a lower environmental impact.' },
+      { key: 'certificateAuthenticity', status: 'partial', description: 'Profil B Corp dapat digunakan untuk memeriksa status B Corp Danone-AQUA. Sumber yang ditautkan belum memverifikasi nomor, ruang lingkup, dan masa berlaku setiap sertifikat produk atau kemasan AQUA.', descriptionEn: 'The B Corp profile can be used to check Danone-AQUA’s B Corp status. The linked sources do not verify the number, scope, and validity period of each AQUA product or packaging certificate.' },
+      { key: 'labTesting', status: 'missing', description: 'FAQ AQUA Life dan materi LCA yang ditautkan memberi informasi tentang klaim kemasan dan penilaian siklus hidup, tetapi bukan laporan uji laboratorium komparatif publik. Karena itu, bukti publik yang tersedia belum cukup untuk memverifikasi klaim lingkungan tersebut melalui pengujian laboratorium.', descriptionEn: 'The linked AQUA Life FAQ and LCA material provide information about packaging claims and life-cycle assessment, but are not a public comparative laboratory report. The available public evidence is therefore insufficient to verify these environmental claims through laboratory testing.' },
+      { key: 'lca', status: 'partial', description: 'Materi presentasi LCA AQUA Life yang ditautkan menunjukkan adanya penilaian siklus hidup. Namun, sumber tersebut belum cukup untuk memastikan bahwa hasilnya merupakan LCA independen, terkini, dan mewakili setiap produk AQUA di Indonesia.', descriptionEn: 'The linked AQUA Life LCA presentation indicates that a life-cycle assessment was conducted. However, the source is not enough to establish that its findings are an independent, current LCA representative of every AQUA product in Indonesia.' },
+      { key: 'emissions', status: 'partial', description: 'Halaman iklim Danone mendukung adanya informasi dan target iklim di tingkat perusahaan. Sumber yang ditautkan tidak menunjukkan jejak emisi spesifik AQUA Life atau data Scope 1, 2, dan 3 yang dapat dikaitkan langsung dengan produk tersebut.', descriptionEn: 'Danone’s climate page supports the availability of company-level climate information and targets. The linked source does not show an AQUA Life-specific emissions footprint or Scope 1, 2, and 3 data directly attributable to that product.' },
+      { key: 'materialComposition', status: 'ok', description: 'FAQ AQUA Life menyebut penggunaan 100% rPET untuk botol AQUA Life. Klaim ini berlaku pada botol/produk yang disebut dalam FAQ; jangan menggeneralisasikannya ke semua produk atau seluruh komponen kemasan AQUA.', descriptionEn: 'The AQUA Life FAQ states that the AQUA Life bottle uses 100% rPET. This claim applies to the bottle/product described in the FAQ; it should not be generalized to all products or every packaging component from AQUA.' },
+      { key: 'endOfLife', status: 'partial', description: 'Materi LCA yang ditautkan membahas siklus hidup, tetapi bukti yang tersedia di sini belum secara langsung memverifikasi panduan pembuangan atau hasil pengumpulan dan daur ulang botol AQUA Life. Klaim program akhir masa pakai memerlukan sumber khusus tentang program tersebut.', descriptionEn: 'The linked LCA material discusses the product life cycle, but the evidence available here does not directly verify disposal guidance or collection and recycling outcomes for AQUA Life bottles. End-of-life program claims require a source specific to those programs.' },
+      { key: 'audit', status: 'partial', description: 'Halaman keberlanjutan Danone memberi konteks tentang upaya keberlanjutan perusahaan, tetapi tautan yang tersedia belum menunjukkan laporan assurance independen yang mencakup klaim atau dampak lingkungan AQUA Life secara spesifik.', descriptionEn: 'Danone’s sustainability page provides context about company sustainability efforts, but the available link does not show an independent assurance report covering AQUA Life’s specific environmental claims or impacts.' },
+      { key: 'marketing', status: 'partial', description: 'Klaim “100% rPET” perlu dibaca sesuai cakupan yang dinyatakan FAQ: botol AQUA Life, bukan seluruh produk atau dampak lingkungan sepanjang siklus hidup. Bukti yang ditautkan tidak cukup untuk menyimpulkan bahwa klaim tersebut menyesatkan.', descriptionEn: 'The “100% rPET” claim should be read within the scope stated in the FAQ: the AQUA Life bottle, not every product or its full life-cycle environmental impact. The linked evidence is not enough to conclude that the claim is misleading.' },
+      { key: 'docs', status: 'ok', description: 'Sumber publik yang ditautkan mencakup profil B Corp Danone-AQUA, FAQ AQUA Life, materi presentasi LCA, serta halaman iklim dan keberlanjutan Danone. Ketersediaan dokumen membantu penelusuran, tetapi tidak berarti semua klaim produk telah diverifikasi.', descriptionEn: 'The linked public sources include Danone-AQUA’s B Corp profile, the AQUA Life FAQ, LCA presentation material, and Danone climate and sustainability pages. These documents aid review but do not mean every product claim has been verified.' }
     ]
   },
   "cleo": {
@@ -91,15 +91,15 @@ const DB = {
     name: 'CLUB (Indofood CBP)',
     cat: 'Air minum dalam kemasan · Minuman',
     sentimentOverrides: {
-      clubCertification: 'neutral', clubAuthenticity: 'neutral', clubLaboratory: 'positive',
+      clubCertification: 'positive', clubAuthenticity: 'positive', clubLaboratory: 'positive',
       clubLca: 'neutral', clubEmissions: 'neutral', clubMaterials: 'neutral',
       clubEndOfLife: 'positive', clubAudit: 'neutral', clubMarketing: 'neutral', clubDocs: 'positive'
     },
-    summary: 'Bukti tidak cukup untuk memverifikasi klaim lingkungan yang spesifik bagi CLUB. ICBP melaporkan program lingkungan pada tingkat perusahaan, tetapi bukti tersebut tidak otomatis berlaku untuk setiap produk atau kemasan CLUB. Ini bukan red flag bahwa klaim CLUB terbukti menyesatkan.',
-    verdictOverride: { color: 'amber', labelId: 'Bukti Tidak Cukup', labelEn: 'Insufficient Evidence' },
+    summary: 'ICBP memiliki sertifikasi pengelolaan lingkungan yang sah dan melaporkan program lingkungan perusahaan. Bukti ini mendukung praktik operasional perusahaan, tetapi belum membuktikan bahwa setiap produk atau kemasan CLUB tersertifikasi atau memiliki dampak lingkungan lebih rendah. Bukti produk seperti LCA, komposisi material, dan jejak emisi CLUB masih terbatas.',
+    verdictOverride: { color: 'amber', labelId: 'Sertifikasi Valid · Bukti Produk Terbatas', labelEn: 'Valid Certification · Limited Product Evidence' },
     evidence: [
-      { key: 'clubCertification', status: 'missing', label: 'Sertifikasi Pihak Ketiga', labelEn: 'Third-party Certification', description: 'ICBP melaporkan sertifikasi pengelolaan lingkungan, termasuk ISO 14001, untuk beberapa unit operasi. Sumber yang ditinjau tidak membuktikan bahwa setiap produk atau kemasan CLUB memiliki sertifikasi lingkungan.', descriptionEn: 'ICBP reports environmental-management certifications, including ISO 14001, for some operating units. The reviewed sources do not establish that every CLUB product or package carries an environmental certification.' },
-      { key: 'clubAuthenticity', status: 'missing', label: 'Keaslian Sertifikat', labelEn: 'Certificate Authenticity', description: 'Tidak ditemukan sertifikat lingkungan yang spesifik untuk produk CLUB dalam sumber publik yang ditinjau.', descriptionEn: 'No product-specific environmental certificate for CLUB was identified in the reviewed public sources.' },
+      { key: 'clubCertification', status: 'ok', label: 'Sertifikasi Pihak Ketiga', labelEn: 'Third-party Certification', description: 'ICBP melaporkan sertifikasi pengelolaan lingkungan, termasuk ISO 14001, untuk unit operasinya. Sertifikasi ini merupakan bukti yang kredibel untuk sistem pengelolaan lingkungan pada cakupan yang disertifikasi; sertifikasi tersebut tidak otomatis berlaku untuk setiap produk atau kemasan CLUB.', descriptionEn: 'ICBP reports environmental-management certifications, including ISO 14001, for its operating units. These are credible evidence of environmental-management systems within their certified scope; they do not automatically certify every CLUB product or package.' },
+      { key: 'clubAuthenticity', status: 'ok', label: 'Keaslian Sertifikat', labelEn: 'Certificate Authenticity', description: 'Informasi penghargaan dan sertifikasi serta laporan ICBP menjadi sumber perusahaan yang mendukung keberadaan sertifikasi pengelolaan lingkungan tersebut. Bukti ini mengonfirmasi sertifikasi pada cakupan unit operasi yang dilaporkan, bukan sertifikat khusus untuk tiap produk CLUB.', descriptionEn: 'ICBP’s awards and certifications information and sustainability reporting are company sources supporting the existence of these environmental-management certifications. They substantiate certification within the reported operating-unit scope, not a separate certificate for each CLUB product.' },
       { key: 'clubLaboratory', status: 'ok', label: 'Pengujian Laboratorium', labelEn: 'Laboratory Testing', description: 'ICBP menyatakan air limbah dari unit operasinya diolah dan kualitasnya diuji secara berkala oleh laboratorium independen terakreditasi. Ini adalah pengujian air limbah operasional, bukan bukti klaim lingkungan tentang kemasan CLUB.', descriptionEn: 'ICBP says wastewater from its operating units is treated and regularly tested by independent accredited laboratories. This concerns operational wastewater, not environmental claims about CLUB packaging.' },
       { key: 'clubLca', status: 'missing', label: 'Penilaian Siklus Hidup', labelEn: 'Life-Cycle Assessment', description: 'Tidak ditemukan LCA tingkat produk yang dipublikasikan untuk air minum dalam kemasan CLUB.', descriptionEn: 'No publicly available product-level LCA for CLUB bottled water was identified.' },
       { key: 'clubEmissions', status: 'missing', label: 'Transparansi Emisi Karbon', labelEn: 'Carbon Emissions Transparency', description: 'ICBP menerbitkan informasi lingkungan, energi, dan emisi gas rumah kaca, tetapi sumber yang ditinjau tidak menyediakan jejak karbon produk yang jelas dan spesifik untuk CLUB.', descriptionEn: 'ICBP publishes environmental, energy, and greenhouse-gas information, but the reviewed material does not provide a clear CLUB-specific product carbon footprint.' },
@@ -390,18 +390,18 @@ const DB = {
 
 const PRODUCT_SOURCE_LINKS = {
   "aqua danone indonesia": {
-    default: [{ label: 'AQUA Indonesia — official site', url: 'https://www.aqua.co.id/' }, { label: 'Danone — financial and extra-financial reports', url: 'https://www.danone.com/investors/publications-and-events/financial-and-extra-financial-reports.html' }],
+    default: [{ label: 'AQUA Life — FAQ', url: 'https://www.sehataqua.co.id/page/aqualife-faq/' }],
     byKey: {
-      certification: [{ label: 'AQUA — product and company information', url: 'https://www.aqua.co.id/' }],
-      certificateAuthenticity: [{ label: 'AQUA — official company information', url: 'https://www.aqua.co.id/' }],
-      labTesting: [{ label: 'AQUA — product information (environmental comparative test not located)', url: 'https://www.aqua.co.id/' }],
-      lca: [{ label: 'Danone financial and extra-financial reports', url: 'https://www.danone.com/investors/publications-and-events/financial-and-extra-financial-reports.html' }],
-      emissions: [{ label: 'Danone financial and extra-financial reports', url: 'https://www.danone.com/investors/publications-and-events/financial-and-extra-financial-reports.html' }],
-      materialComposition: [{ label: 'AQUA — packaging and product information', url: 'https://www.aqua.co.id/' }],
-      endOfLife: [{ label: 'AQUA — circularity and collection information', url: 'https://www.aqua.co.id/' }],
-      audit: [{ label: 'Danone financial and extra-financial reports', url: 'https://www.danone.com/investors/publications-and-events/financial-and-extra-financial-reports.html' }],
-      marketing: [{ label: 'AQUA — product information and claim scope', url: 'https://www.aqua.co.id/' }],
-      docs: [{ label: 'AQUA Indonesia — official site', url: 'https://www.aqua.co.id/' }, { label: 'Danone financial and extra-financial reports', url: 'https://www.danone.com/investors/publications-and-events/financial-and-extra-financial-reports.html' }]
+      certification: [{ label: 'AQUA — B Corp profile', url: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/danone-aqua-indonesia/' }],
+      certificateAuthenticity: [{ label: 'AQUA — B Corp profile', url: 'https://www.bcorporation.net/en-us/find-a-b-corp/company/danone-aqua-indonesia/' }],
+      labTesting: [{ label: 'AQUA Life — FAQ', url: 'https://www.sehataqua.co.id/page/aqualife-faq/' }, { label: 'AQUA Life Cycle Assessment — presentation', url: 'https://muhyidin.id/wp-content/uploads/2021/06/Presentasi-AQUA-Life-Cycle-Assessment-Imam.pdf' }],
+      lca: [{ label: 'AQUA Life Cycle Assessment — presentation', url: 'https://muhyidin.id/wp-content/uploads/2021/06/Presentasi-AQUA-Life-Cycle-Assessment-Imam.pdf' }],
+      emissions: [{ label: 'Danone — driving climate action', url: 'https://www.danone.com/group/sustainability/nature/driving-climate-action.html' }],
+      materialComposition: [{ label: 'AQUA Life — FAQ', url: 'https://www.sehataqua.co.id/page/aqualife-faq/' }],
+      endOfLife: [{ label: 'AQUA Life Cycle Assessment — presentation', url: 'https://muhyidin.id/wp-content/uploads/2021/06/Presentasi-AQUA-Life-Cycle-Assessment-Imam.pdf' }],
+      audit: [{ label: 'Danone — sustainability', url: 'https://www.danone.com/group/sustainability.html' }],
+      marketing: [],
+      docs: [{ label: 'AQUA — official site', url: 'https://www.sehataqua.co.id/' }]
     }
   },
   "cleo": {
@@ -423,7 +423,7 @@ const PRODUCT_SOURCE_LINKS = {
     default: [{ label: 'ICBP Sustainability Report archive', url: 'https://www.indofoodcbp.com/page/sustainability-report' }],
     byKey: {
       clubCertification: [{ label: 'ICBP Awards & Certifications', url: 'https://www.indofoodcbp.com/company/award-certification' }, { label: 'ICBP Sustainability Report archive', url: 'https://www.indofoodcbp.com/page/sustainability-report' }],
-      clubAuthenticity: [{ label: 'ICBP company and brand directory (CLUB-specific certificate not identified)', url: 'https://www.indofoodcbp.com/sitemap' }],
+      clubAuthenticity: [{ label: 'ICBP Awards & Certifications', url: 'https://www.indofoodcbp.com/company/award-certification' }, { label: 'ICBP Sustainability Report archive', url: 'https://www.indofoodcbp.com/page/sustainability-report' }],
       clubLaboratory: [{ label: 'ICBP Water Management — independent wastewater testing', url: 'https://www.indofoodcbp.com/page/water-management' }],
       clubLca: [{ label: 'ICBP Sustainability Reports reviewed (no CLUB product LCA identified)', url: 'https://www.indofoodcbp.com/page/sustainability-report' }],
       clubEmissions: [{ label: 'ICBP Sustainability Reports — energy and emissions information', url: 'https://www.indofoodcbp.com/page/sustainability-report' }, { label: 'ICBP Energy Management', url: 'https://www.indofoodcbp.com/page/energy-management' }],
@@ -511,7 +511,7 @@ const PRODUCT_TRANSLATIONS = {
     "club": {
       name: 'CLUB (Indofood CBP)',
       cat: 'Bottled water · Beverage',
-      summary: 'Insufficient evidence to verify environmental claims specific to CLUB. ICBP reports company-wide environmental programs, but that evidence does not automatically apply to every CLUB product or package. This is not a red flag finding that CLUB claims are proven misleading.'
+      summary: 'ICBP holds legitimate environmental-management certifications and reports company-wide environmental programs. This supports operational practices, but does not establish that every CLUB product or package is certified or has a lower environmental impact. Product-specific evidence such as an LCA, material composition, and CLUB emissions footprint remains limited.'
     },
     "volkswagen tdi clean diesel": {
       name: 'Volkswagen TDI “Clean Diesel”',
@@ -593,7 +593,7 @@ const PRODUCT_TRANSLATIONS = {
     "club": {
       name: 'CLUB (Indofood CBP)',
       cat: 'Air minum dalam kemasan · Minuman',
-      summary: 'Bukti tidak cukup untuk memverifikasi klaim lingkungan yang spesifik bagi CLUB. ICBP melaporkan program lingkungan pada tingkat perusahaan, tetapi bukti tersebut tidak otomatis berlaku untuk setiap produk atau kemasan CLUB. Ini bukan red flag bahwa klaim CLUB terbukti menyesatkan.'
+      summary: 'ICBP memiliki sertifikasi pengelolaan lingkungan yang sah dan melaporkan program lingkungan perusahaan. Bukti ini mendukung praktik operasional perusahaan, tetapi belum membuktikan bahwa setiap produk atau kemasan CLUB tersertifikasi atau memiliki dampak lingkungan lebih rendah. Bukti produk seperti LCA, komposisi material, dan jejak emisi CLUB masih terbatas.'
     },
     "volkswagen tdi clean diesel": {
       name: 'Volkswagen TDI “Clean Diesel”',
